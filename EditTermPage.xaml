@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApplication.EditTermPage"
+             Title="Edit Term">
+
+    <!--top section-->
+    <Grid
+        RowDefinitions="*,*"
+        ColumnDefinitions="*">
+
+        <!--Terms-->
+        <Label            
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="Edit Term"                
+            FontSize="18"                 
+            FontAttributes="Bold"
+            TextDecorations="Underline"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"  
+            Padding="20,40,20,40"
+            Margin="0,0,0,0"
+       />
+
+        <!--Term Name-->
+        <FlexLayout
+            Grid.Row="0"
+            Grid.Column="0"
+            VerticalOptions="Start"
+            HorizontalOptions="Center"
+            JustifyContent="SpaceBetween"           
+            Margin="20,100,20,0">
+
+            <Label   
+                Text="* Term Name:"
+                FontSize="16"                                                              
+            />
+
+            <Frame 
+                CornerRadius="0"
+                Margin="0,0,0,120">
+
+                <Entry 
+                    x:Name="TermNameEntry"      
+                    FlowDirection="LeftToRight"
+                />
+            </Frame>
+        </FlexLayout>
+
+        <!--Term Start-->
+        <FlexLayout
+            Grid.Row="0"
+            Grid.Column="0"
+            VerticalOptions="Start"
+            HorizontalOptions="Center"
+            JustifyContent="SpaceBetween"
+            Margin="20,160,20,0">
+
+            <Label   
+                Text="* Start Date:"
+                FontSize="16"                                                              
+            />
+
+            <Frame 
+                CornerRadius="0"
+                Margin="0,0,0,90">
+
+                <DatePicker 
+                    x:Name="TermStartDatePicker"
+                    Format="MMMM d, yyyy"
+                    FlowDirection="LeftToRight">
+                </DatePicker>
+            </Frame>
+        </FlexLayout>
+
+        <!--Term End-->
+        <FlexLayout
+            Grid.Row="0"
+            Grid.Column="0"
+            VerticalOptions="Start"
+            HorizontalOptions="Center"
+            JustifyContent="SpaceBetween"
+            Margin="20,220,20,0">
+
+            <Label   
+                Text="* End Date:"
+                FontSize="16"                                                              
+            />
+
+            <Frame 
+                CornerRadius="0"
+                Margin="0,0,0,60">
+
+                <DatePicker 
+                    x:Name="TermEndDatePicker"
+                    Format="MMMM d, yyyy"
+                    FlowDirection="LeftToRight">
+                </DatePicker>
+            </Frame>
+        </FlexLayout>
+
+        <!--bottom section-->
+        <HorizontalStackLayout 
+            Grid.Row="1" 
+            Grid.Column="0" 
+            VerticalOptions="End" 
+            HorizontalOptions="Center"
+            Padding="20">
+
+            <Button
+                x:Name="SaveTermButton"
+                Text="Save"               
+                SemanticProperties.Hint="Save the new Term"    
+                MinimumWidthRequest="120"                
+                Clicked="SaveTermButton_Clicked"
+                Margin="0,0,20,0"
+            />
+
+            <Button
+                x:Name="CancelTermButton"
+                Text="Cancel"               
+                SemanticProperties.Hint="Cancel the new Term"    
+                MinimumWidthRequest="120"                 
+                Clicked="CancelTermButton_Clicked"
+                Margin="20,0,0,0"         
+            />
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>
